@@ -1,0 +1,56 @@
+---
+title: "Taller de R en veRano  😎 ⛱️ 🏄  " 
+author: "Psic Mariangeles Martinez"
+format: 
+  html:
+    code-fold: false
+    echo: false
+    embed-resources: true
+    author-title: "Autor:"
+    toc: true                # Habilita la tabla de contenidos
+    toc-title: "Índice de Contenidos"  # Título del índice
+    toc-depth: 3             # Nivel de profundidad del índice (hasta h3)
+    toc-location: left       # Ubicación del índice (izquierda)
+    #include-before-body: logo.html # Incluye el logo antes del contenido
+editor: visual
+execute:
+  warning: false
+  message: false
+footnotes-hover: true # muestra notas al pie
+smooth-scroll: true # suaviza el scroll
+code-copy: true            # Permite copiar el código desde el documento
+include-in-header: HTML/header4.html
+css: CSS/style.css
+---
+
+## ¿Qué es este taller? Objetivo
+
+Es una aproximación a R. Tiene como objetivo introducirlxs a este lenguaje R y que puedan realizar manejo de datos y presentaciones de los mismos. El desafio es mandarse a jugar un poco y probar, probar y probar.
+
+## Dinámica de los encuentros
+
+Este taller va a ser semanal y se realizará los **días miércoles de 8.30h a 10h**. La intención es que vayamos entre todxs metiendole mano a R desde el primer encuentro y no que vean solamente una PPT. Por otro lado, en R hay que practicar, practicar y practicar. Es por esto que les voy a ir compartiendo actividades para que vayan resolviendo por fuera de este taller. El lugar de encuentro: el aula de la residencia.
+
+**Fecha de inicio: 15/01/2025**
+
+## Intención final de este taller
+
+Automatización del BEM 🔥
+
+## "Elementos" necesarios para el taller
+
+-   Tener R y RStudio instalado, versión lo más actualizada posible.
+
+-   Paciencia: usar R puede resultar un poco frustrante, como la vida adulta en general. Recomiendo fuerte amigarse con la paciencia y no tirar de entrada la toalla y volver shorando a nuestro gran y fiel amigo Excel. Cuesta identificar los errores y “saber que hacer”, es complejo, es un lenguaje nuevo, etc 🥹\
+    Más allá de estos males, hay mucha pero mucha info de R en la web. Hay comunidades, foros, miles de tutoriales en youtube y CHATGPT obviamente.\
+
+-   Bases de datos nominal y agrupada (pero esto no para el 1° encuentro)
+
+¿Qué vamos a ver en este taller? Cronograma/temario
+
+| Fecha | Tema |
+|------------------------------------|------------------------------------|
+| 15/01/2025 | ¿Qué es R? Componentes. Creación de un proyecto. Instalación de paquetes y librerías. Objetos, vectores. |
+|  |  |
+|  |  |
+|  |  |
