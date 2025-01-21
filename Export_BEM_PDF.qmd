@@ -3,7 +3,7 @@ format:
   pdf:
     include-in-header: header-footer.tex
     toc: false  # Genera un índice de contenido
-    toc-depth: 2  # Nivel de profundidad del índice
+    toc-depth: 5  # Nivel de profundidad del índice
 ---
 
 ```{r, include=FALSE}
@@ -35,7 +35,7 @@ La última actualización del Manual de Normas y Procedimientos de Vigilancia y 
 **Modificaciones implementadas en los ENO**
 
 | Evento | Año de implementación | Modalidad actual de notificación |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Parotiditis | 2023 | Nominal individualizada |
 | Internaciones por IRAG[^3] | 2023 | Nominal individualizada |
 | Lesiones en el hogar | 2023 | Sólo internaciones - agrupada |
@@ -99,7 +99,7 @@ dffdfd
 
 \newpage
 
-## Diarrea aguda
+## **Diarrea aguda**
 
 |                                         |
 |-----------------------------------------|
@@ -109,7 +109,7 @@ dffdfd
 
 En las semanas analizadas, se notificaron un total de `r DA_cantidad_SE_BEM` casos de diarrea aguda a nivel provincial. Hubo una disminución del `r DA_variacion_porcentual` % en relación al mismo periodo del año anterior.
 
-**Distribución temporal de casos de diarrea aguda por semana epidemiológica.**
+### Distribución temporal de casos de diarrea aguda por semana epidemiológica.
 
 Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r DA_total_evolutivo`)
 
@@ -120,56 +120,164 @@ grafico_DA_evolutivo
 
 \newpage
 
-**Casos de diarrea aguda por grupos etarios.**
+### Distribución temporal de casos de diarrea aguda por SE, según grupos de edad.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r DA_total_evolutivo`)
+
+```{r, echo=FALSE,fig.width=33, fig.height=15}
+DA_grafico_grupoetario_acumulado
+```
+
+### Diarrea aguda por grupos etarios.
 
 Desde SE `r SE_min` hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r DA_cantidad_SE_BEM`)
 
 ```{r, echo=FALSE}
 DA_grafico_grupoetario
-
-```
-
-**Distribución temporal de casos de diarrea aguda por SE, según grupos de edad.**
-
-Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r DA_total_evolutivo`)
-
-```{r, echo=FALSE,fig.width=33, fig.height=17}
-DA_grafico_grupoetario_acumulado
 ```
 
 \newpage
 
-**Distribución absoluta de casos de diarrea aguda por región, según grupos de edad.**
+### Distribución absoluta de casos de diarrea aguda por región, según grupos de edad.
 
 Desde SE `r SE_min` hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r DA_cantidad_SE_BEM`)
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.height=3}
 DA_grafico_regiones
 ```
 
-**Corredor endémico semanal. Diarrea aguda**[^6]**.**
+### Corredor endémico semanal. Diarrea aguda[^6].
 
 [^6]: Construido en base a los datos correspondientes al período 2015 - 2023, excluyendo los años pandémicos (2020 y 2021).
 
 `r ANIO_max` . Provincia del Neuquén.
 
-![](images/clipboard-473652887.png){fig-align="center" width="520"}
+![](images/clipboard-473652887.png){fig-align="center" width="526"}
 
 \newpage
 
-## Internaciones por lesiones en el hogar
+## **Internaciones por lesiones en el hogar**
 
 INDICADOR
 
-**Distribución temporal de internaciones por lesiones en el hogar por semana epidemiológica**
+### Distribución temporal de internaciones por lesiones en el hogar por semana epidemiológica.
 
 Desde SE 21/2023 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén. Provincia del Neuquén (n = `r lesiones_total`)
 
-```{r, echo=FALSE,fig.width=33, fig.height=17}
+```{r, echo=FALSE,fig.width=12, fig.height=8}
 lesiones_grafico_evolutivo
 
 ```
 
 \newpage
 
-## Lesiones por mordedura de perro (ambulatorias)
+## **Lesiones por mordedura de perro (ambulatorias)**
+
+INDICADOR
+
+### Distribución temporal de mordedura de perro por semana epidemiológica.
+
+Desde SE 21/2023 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén. Provincia del Neuquén (n = `r mordeduras_total`)
+
+```{r,echo=FALSE,fig.width=33, fig.height=17}
+mordeduras_grafico_evolutivo
+```
+
+\newpage
+
+### Incidencia acumulada de casos de mordedura de perro cada 10000 habitantes por año, según región.
+
+Desde SE `r SE_min` hasta SE `r SE_max` de los años 2020 hasta `r ANIO_max` . Provincia del Neuquén.
+
+```{r, echo=FALSE}
+mordedura_incidencia_grafico
+```
+
+\newpage
+
+## **Internaciones por siniestros viales**
+
+INDICADOR
+
+En las semanas analizadas, se notificaron un total de `r siniestros_viales_SEBEM` internaciones por siniestros viales.
+
+### Distribución temporal de internaciones por siniestros viales por semana epidemiológica.
+
+Desde SE 21/2023 hasta SE `r SE_max`/`r ANIO_max` . Provincia del Neuquén (n = `r siniestros_viales_total`)
+
+```{r,echo=FALSE}
+siniestros_viales_grafico_evolutivo
+
+```
+
+\newpage
+
+## **Sífilis**
+
+indicador
+
+### Distribución temporal de casos de sífilis por semana epidemiológica.
+
+Desde SE 1/2022 hasta SE OBJETO SE MAX/ AÑO MAX. Provincia del Neuquén (n = OBJETO CNATIDAD)
+
+ACÁ VA EL GRAFICO
+
+El gráfico describe la distribución temporal absoluta de los casos notificados en la población general, organizados según la fecha mínima (priorizando el orden de inicio de síntomas, consulta, toma de muestra y apertura). Es relevante señalar que el aumento observado desde la SE 1/2023 podría no reflejar un verdadero incremento en los casos.
+
+En cambio, este aumento podría atribuirse a una mejora en el registro, en parte como resultado de un cambio en la modalidad de recolección de datos.
+
+### Casos de sífilis por grupo etario, según sexo consignado en el DNI.
+
+Desde SE OBJETO SEminbem hasta SE OBJETO SEmax/ANIO max. Provincia del Neuquén (n = OBJETO CNATIDAD)
+
+GRAFICO
+
+Se observa que la sífilis en el período bajo análisis del año OBJETO ANIO_MAX 2024 afecta principalmente a los grupos etarios de OBJETO GRUPOS MAXIMOS 25 a 34 años y de 20 a 24 años. **A continuación, en términos de incidencia, encontramos el grupo de 45 a 65 años. ??? el grafico no es de incidencia. hay que borrarlo.**
+
+### Distribución temporal de casos de sífilis por semana epidemiológica, según grupos de edad.
+
+Desde SE 1/2022 hasta SE OBJETO SE MAX/ AÑO MAX. Provincia del Neuquén (n = OBJETO CNATIDAD)
+
+\newpage
+
+## **Infecciones inmunoprevenibles**
+
+INDICADOR
+
+En las semanas analizadas, se notificaron un total de `r varicela_SEBEM` casos de varicela a nivel provincial. La variación porcentual es del `r IP_variacion_porcentual` % con respecto al mismo periodo del año anterior.
+
+### Distribución temporal de casos de infecciones inmunoprevenibles por semana epidemiológica, según tipo de infección.[^7]
+
+[^7]: A partir de la SE 30 del 2023, el evento parotiditis cambió la modalidad de registro de agrupada a nominal.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r IP_total` )
+
+```{r, echo=FALSE,fig.width=33, fig.height=15}
+IP_grafico_evolutivo
+```
+
+\newpage
+
+### Distribución de casos de varicela por semana epidemiológica, según grupos etarios.
+
+Desde SE 1/2020 hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r Varicela_evolutivo_total` )
+
+```{r, echo=FALSE, fig.width=33, fig.height=15}
+IP_grafico_grupoetario_acumulado
+```
+
+### Casos de varicela por grupos etarios.
+
+Desde SE `r SE_min` hasta SE `r SE_max` /`r ANIO_max` . Provincia del Neuquén (n = `r varicela_SEBEM` )
+
+```{r, echo=FALSE}
+varicela_grafico_grupoetario
+```
+
+### Incidencia acumulada de casos de infecciones inmunoprevenibles cada 10000 habitantes por año, según tipo de infección y región.
+
+Desde SE `r SE_min` hasta SE `r SE_max` de los años 2020 hasta `r ANIO_max` . Provincia del Neuquén.
+
+```{r, echo=FALSE}
+varicela_incidencia_grafico
+```
