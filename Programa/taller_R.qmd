@@ -46,7 +46,7 @@ Automatización del BEM 🔥
 
 -   Bases de datos nominal y agrupada (pero esto no para el 1° encuentro)
 
-¿Qué vamos a ver en este taller? Cronograma/temario
+## ¿Qué vamos a ver en este taller? Cronograma/temario
 
 +------------+-----------------------------------------------------------------------------------------------------------------------------+
 | Fecha      | Tema                                                                                                                        |
