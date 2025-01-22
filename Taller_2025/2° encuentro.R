@@ -40,16 +40,27 @@ library(ggplot2)#para graficar.
 #carga de base de datos
 #imp!: el camino más directo es tener el dataset en la misma carpeta del .Rproj
 
-#nombre <- read.csv2("nombre.csv", sep = ";")
+#nombre <- read.csv2("nombre.csv")
+#nombre <- read.csv("nombre.csv", sep = ";")
 
+arbovirus <- read.csv2("ARBO_NEUQUEN.csv")
 
-arbovirus <- read.csv2("ARBO_NEUQUEN.csv", sep = ";")
+datos <- read.csv("ARBO_NEUQUEN.csv")
+
 #¿cuántas observaciones tiene y cuantas variables? ¿Cuál es su formato?
+nrow(arbovirus)
+ncol(arbovirus)
+class(arbovirus)
 
 #DATAFRAME: estructura de datos similar a una tabla. Los datos están organizados en filas y columnas. 
 
+#modificamos el formato del dataset
+arbovirus <- as.data.frame(arbovirus)
+
+
 
 #Carguemos la base como un xlsx
+
 
 #Miremos como está compuesta nuestra tabla
 
@@ -73,21 +84,20 @@ arbovirus <- read.csv2("ARBO_NEUQUEN.csv", sep = ";")
 #filtros por prov de residencia----
 
 #uso de la funcion filter. ¿Por cuál columna vamos a filtar? 
-
+arbovirus <- arbovirus %>%  #pipe o tuberias
+  filter(ID_PROV_INDEC_RESIDENCIA==58)
 
 
 #SE min----
 #ya sabemos que la SE_FIS no siempre está completa
 arbovirus <- arbovirus %>%
-  mutate(SE_MIN = pmin(fecha1, fecha2, fecha3
+  mutate(SE_MIN = pmin(SEPI_SINTOMA,SEPI_CONSULTA,SEPI_MUESTRA,SEPI_APERTURA,
                        na.rm = TRUE))
 
 #hagamos lo mismo con el año
-
-
-#hagamos lo mismo con la variable AÑO
-
-
+arbovirus <- arbovirus %>%
+  mutate(ANIO_MIN = pmin(ANIO_EPI_SINTOMA,ANIO_EPI_CONSULTA,ANIO_EPI_CONSULTA,ANIO_EPI_MUESTRA,ANIO_EPI_APERTURA,
+                       na.rm = TRUE))
 
 #na.rm = remove NA Si mis valores ausentes decido ignorarlos, pongo TRUE
 
@@ -98,9 +108,9 @@ arbovirus <- arbovirus %>%
   #a) Distribucion temporal de las notificaciones de arbo
   
   arbovirus_evolutivo <- arbovirus %>% 
-    group_by(ANIO_EPI_SINTOMA, SE_MIN, SEXO) %>% 
+    group_by(ANIO_MIN, SE_MIN, SEXO, CLASIFICACION_MANUAL) %>% 
     summarise(casos = n(), .groups = "drop") %>% 
-    mutate(ANIO_SE = paste(ANIO_EPI_SINTOMA, SE_MIN, sep = "-"))
+    mutate(ANIO_SE = paste(ANIO_MIN, SE_MIN, sep = "-"))
   
   
  
